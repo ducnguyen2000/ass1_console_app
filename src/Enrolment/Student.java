@@ -4,11 +4,12 @@ import java.util.*;
 public class Student {
 	private String id;
 	private String name;
-	private Calendar birthdate;
+	private String birthdate;
 	private ArrayList<Course> courseList;
-//  duc.birthday = new GregorianCalendar(2000, 11, 14);
+
+
 	
-	public Student(String id, String name, Calendar birthdate) {
+	public Student(String id, String name, String birthdate) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -28,8 +29,13 @@ public class Student {
 		return name;
 	}
 	
-	public Calendar getBirthdate() {
+	public String getBirthdate() {
 		return birthdate;
+	}
+	
+	@Override
+	public String toString() {
+		return "Student [studentName=" + name + ", studentID=" + id + ", birthdate=" + birthdate + "]";
 	}
 	
 }

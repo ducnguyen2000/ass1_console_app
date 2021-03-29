@@ -31,4 +31,8 @@ public class Course {
 		return number_of_credits;
 	}
 	
+	@Override
+	public String toString() {
+		return "Course [studentName=" + name + ", studentID=" + id + ", number_of_credits=" + number_of_credits + "]";
+	}
 }
