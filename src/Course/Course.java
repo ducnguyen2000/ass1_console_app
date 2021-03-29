@@ -1,11 +1,11 @@
-package main;
+package Course;
 
 public class Course {
 	private String id;
 	private String name;
-	private String number_of_credits;
+	private int number_of_credits;
 	
-	public Course(String id, String name, String number_of_credits) {
+	public Course(String id, String name, int number_of_credits) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -20,7 +20,7 @@ public class Course {
 		return name;
 	}
 	
-	public String getNumberOfCredits() {
+	public int getNumberOfCredits() {
 		return number_of_credits;
 	}
 	

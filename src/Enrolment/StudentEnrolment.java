@@ -1,6 +1,6 @@
-package main;
+package Enrolment;
 
-public class StudentEnrolment {
+public class StudentEnrolment implements StudentEnrolmentManager{
 	private String student;
 	private String course;
 	private String semester;
@@ -23,4 +23,10 @@ public class StudentEnrolment {
 	public String semester() {
 		return semester;
 	}
+	
+	public void add() {};
+	public void update() {};
+	public void delete() {};
+	public void getOne() {};
+	public void getAll() {};
 }
