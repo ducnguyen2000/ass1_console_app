@@ -19,12 +19,21 @@ public class ConsoleApp {
 		// Sample courses, created by Builder Pattern
 		CourseBuilder crsBuilder1 = new CourseBuilder();
 		CourseBuilder crsBuilder2 = new CourseBuilder();
-		
+			
 		Course crs1 = crsBuilder1.addId("COSC2440").addName("Software Architecture: Design and Implementation").addNumberOfCredits(12).buildCourse();
 		Course crs2 = crsBuilder2.addId("ISYS2101").addName("Software Engineering Project Management").addNumberOfCredits(12).buildCourse();
 		
+		
+		// Sample enrolment
+		StudentEnrolment enrolment = new StudentEnrolment(std1, crs1, "2021A");
+		
+		
+		// Test
 		System.out.println(std1);
 		System.out.println(crs2);
+		System.out.println(enrolment);
+		
+		
 	
 	
 	}
