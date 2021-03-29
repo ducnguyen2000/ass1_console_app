@@ -1,7 +1,0 @@
-package main;
-
-public class Course {
-	private String id;
-	private String name;
-	private String number_of_credits;
-}
