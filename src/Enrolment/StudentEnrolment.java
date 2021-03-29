@@ -4,74 +4,75 @@ import java.util.*;
 import Course.Course;
 import Student.Student;
 
-public class StudentEnrolment implements StudentEnrolmentManager{
+public class StudentEnrolment{
 	private Student student;
 	private Course course;
-	private ArrayList<Student> studentList;
-	private ArrayList<Course> courseList;
-//	private ArrayList<StudentEnrolment> semesterList;
 	private String semester;
 	
-	public StudentEnrolment(String semester) {
-		super();
-		studentList = new ArrayList<Student>();
-		courseList = new ArrayList<Course>();
-
+	// Dependency injection with constructor
+	public StudentEnrolment(Student student, Course course, String semester) {
+		this.student = student;
+		this.course = course;
 		this.semester = semester;
 	}
 	
-	public ArrayList<Student> getStudentList() {
-		return studentList;
-	}
-	
-	public ArrayList<Course> getCourseList() {
-		return courseList;
-	}
-	
-	public String semester() {
+	public String getSemester() {
 		return semester;
 	}
 	
-	public boolean add(Student student, Course course) {
-		if(studentList.contains(student)) {
+	public void setSemester(String semester) {
+		this.semester = semester;
+	}
+	
+	// Facade Pattern
+	public String getStudentId() {
+		return student.getId();
+	}
+	
+	public String getCourseId() {
+		return course.getId();
+	}
+	
+	// Dependency injection with setters
+	public Student getStudent() {
+		return student;
+	}
+	
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+	
+	public Course getCourse() {
+		return course;
+	}
+	
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+	
+	// Method to check duplicated enrollments
+	@Override
+	public boolean equals(Object obj) {
+		if(this == obj) {
+			return true;
+		}
+		
+		if(obj == null || this.getClass() != obj.getClass()) {
 			return false;
 		}
-		if(courseList.contains(course)) {
-			return false;
-		}
-		studentList.add(course);
-		courseList.add(student);
-//		student.getCourseList().add(course);
-		System.out.print(this);
-		return true;
-	};
-//	public boolean update() {
-//		if(studentList.contains(student)) {
-//			return false;
-//		}
-//		if(courseList.contains(course)) {
-//			return false;
-//		}
-//		studentList.add(student);
-//		student.getCourseList.add(this);
-//		return true;
-//	};
-//	public boolean delete() {
-//		if(studentList.contains(student)) {
-//			return false;
-//		}
-//		if(courseList.contains(course)) {
-//			return false;
-//		}
-//		studentList.add(student);
-//		student.getCourseList.add(this);
-//		return true;
-//	};
-//	public void getOne() {};
-//	public void getAll() {};
+		StudentEnrolment that = (StudentEnrolment) obj;
+		
+		return Objects.equals(student, that.student) &&
+				Objects.equals(course, that.course) &&
+				Objects.equals(semester, that.semester);
+		
+	}
 	
 	@Override
 	public String toString() {
-		return "Semester: " + semester + "[students= " + studentList + "; courseList= " + courseList + "]";
+		return "Enrolment {Student = [Student ID: " + student.getId() + ", Student name: " + student.getName() + 
+				"]; Course = [Course ID: " + course.getId() + ", Course name: " + course.getName() + 
+				"]; Semester = " + semester + "}";
 	}
+
 }
