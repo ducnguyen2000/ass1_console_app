@@ -1,15 +1,11 @@
 package Course;
-import java.util.*;
 
-import Student.Student;
 
-public class Course {
+public class Course{
 	private String id;
 	private String name;
 	private int number_of_credits;
 	
-	// Composite Pattern 
-	private List<Course> courseList = new ArrayList<>();
 	
 	public Course() {};
 	
@@ -45,16 +41,11 @@ public class Course {
 		this.number_of_credits = number_of_credits;
 	}
 	
-	public List<Course> getCourseList(){
-		return courseList;
-	}
-	
-	public void addCourse(Course course) {
-		courseList.add(course);
-	}
 	
 	@Override
 	public String toString() {
 		return "Course [courseName = " + name + ", courseID = " + id + ", number_of_credits = " + number_of_credits + "]";
 	}
+	
+	
 }
