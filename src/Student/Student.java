@@ -1,7 +1,5 @@
 package Student;
-import java.util.*;
 
-import Course.Course;
 
 public class Student {
 	private String id;
