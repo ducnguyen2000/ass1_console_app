@@ -45,7 +45,7 @@ public class CheckExistVisitor implements Visitor {
 	@Override
 	public Pair visit(List<StudentEnrolment> studentEnrolmentList, StudentEnrolment toBeCompared) {
 		for (StudentEnrolment enrolment: manager.getAllEnrolments()) {
-			if (toBeCompared.getCourseId().equals(enrolment)) {
+			if (toBeCompared.equals(enrolment)) {
 				Pair found = new Pair(true, manager.getAllEnrolments().indexOf(enrolment));
 				return found;
 			}
