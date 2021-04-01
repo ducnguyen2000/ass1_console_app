@@ -9,7 +9,7 @@ CRUD Student Enrolment
 4. Show all students 
 5. Show all courses
 ----------------------
-Export data to CSV file (See in CSV folder)
+Export data to CSV file (See in CSV folder):
 6. Print all enrolments and export
 7. Print enrolments and export for student
 8. Print enrolments and export for course
@@ -18,6 +18,7 @@ Export data to CSV file (See in CSV folder)
 0. Quit
 
 Notice: "y" stands for Yes, "n" stands for No
+- If you choose to save file, open the folder Console App to see the file
 ```
 
 # Test Case:
@@ -28,7 +29,7 @@ Notice: "y" stands for Yes, "n" stands for No
 # Design patterns used:
 ```
 - Builder: build Student and Course objects
-- Iterator: create tje class StudentList and CourseList
+- Iterator: create the class StudentList and CourseList
 - Dependency Injection: inject contructor and setters of Student and Course into StudentEnrolment
 - Facade: implement getStudentId() from Student and getCourseId() from Course into StudentEnrolment
 - Singleton: create 1 instance of HistoryStudentEnrolmentManager class
