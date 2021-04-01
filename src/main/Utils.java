@@ -71,4 +71,13 @@ public class Utils {
 		}
 		return undo.toLowerCase();
 	}
+	
+	public String getExport() {
+		String export = "";
+		while(!(export.toLowerCase().equals("y") || export.toLowerCase().equals("n"))){
+			System.out.println("Do you want to export this file? (y/n)");
+			export = getInput();
+		}
+		return export.toLowerCase();
+	}
 }

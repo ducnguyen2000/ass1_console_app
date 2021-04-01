@@ -198,6 +198,10 @@ public class ConsoleApp {
 					
 					PrintAllEnrolments all = new PrintAllEnrolments();
 					all.print();
+					String exportAll = utilities.getExport();
+					if(exportAll.equals("y")) {
+						all.exportCSV();
+					}
 					break;
 				
 				case "7":
