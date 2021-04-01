@@ -55,7 +55,7 @@ public class Utils {
 		Course courseToEnrol = courseList.getCourses().get(indexCourse);
 		
 		// Get semester
-		System.out.println("\nEnter semester: ");
+		System.out.println("\nEnter semester(Format: YYYYA/YYYYB/YYYYC): ");
 		String semester = getInput();
 		
 		// Dependency Injection: create enrolment

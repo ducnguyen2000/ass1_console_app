@@ -7,6 +7,7 @@ import Course.*;
 import Enrolment.*;
 import List.*;
 import Student.*;
+import Printer.*;
 
 public class ConsoleApp {
 	public static void main(String args[]) {
@@ -32,9 +33,9 @@ public class ConsoleApp {
 		CourseBuilder crsBuilder3 = new CourseBuilder();
 			
 		
-		Course crs1 = crsBuilder1.addId("COSC2440").addName("SADI").addNumberOfCredits(12).buildCourse();
-		Course crs2 = crsBuilder2.addId("ISYS2101").addName("SEPM").addNumberOfCredits(12).buildCourse();
-		Course crs3 = crsBuilder3.addId("COSC2081").addName("P1").addNumberOfCredits(12).buildCourse();
+		Course crs1 = crsBuilder1.addId("0001").addName("SADI").addNumberOfCredits(12).buildCourse();
+		Course crs2 = crsBuilder2.addId("0002").addName("SEPM").addNumberOfCredits(12).buildCourse();
+		Course crs3 = crsBuilder3.addId("0003").addName("P1").addNumberOfCredits(12).buildCourse();
 		
 		List<Course> courses = new ArrayList<>();
 		courses.addAll(Arrays.asList(crs1, crs2, crs3));
@@ -48,6 +49,9 @@ public class ConsoleApp {
 		
 		// Singleton Pattern
 		HistoryStudentEnrolmentManager manager = HistoryStudentEnrolmentManager.getInstance();
+
+		
+		
 		
 		boolean isQuit = false;
 		
@@ -57,11 +61,19 @@ public class ConsoleApp {
 		while(!isQuit) {
 			System.out.println(
 					"Press the following number to execute the program:\n" +
+					"----------------------\n" +
+					"CRUD Student Enrolment\n" +
 					"1. Create an enrolment\n" + 
 					"2. Update an enrolment\n" + 
 					"3. Delete an enrolment\n" +
 					"4. Show all students\n" +
 					"5. Show all courses\n" +
+					"----------------------\n" +
+					"Export data to CSV file (See in CSV folder)\n" +
+					"6. Print all enrolments and export\n" +
+					"7. Print enrolments and export for student\n" +
+					"8. Print enrolments and export for course\n" +
+					"9. Print enrolments and export for semester\n" +
 					"----------------------\n" +
 					"0. Quit\n"
 					);
@@ -175,6 +187,52 @@ public class ConsoleApp {
 				case "5":
 					courseList.showAllCourses();
 					break;
+					
+				case "6":
+					// Check if any enrolment exists
+					boolean isExistEnrolment1 = utilities.checkEmpryEnrolmentList();
+					if(!isExistEnrolment1) {
+						break;
+					}
+					
+					PrintAllEnrolments all = new PrintAllEnrolments();
+					all.print();
+					break;
+				
+				case "7":
+					// Check if any enrolment exists
+					boolean isExistEnrolment2 = utilities.checkEmpryEnrolmentList();
+					if(!isExistEnrolment2) {
+						break;
+					}
+					
+					PrintStudentEnrolments stu = new PrintStudentEnrolments();
+					stu.print();
+					break;
+					
+				case "8":
+					// Check if any enrolment exists
+					boolean isExistEnrolment3 = utilities.checkEmpryEnrolmentList();
+					if(!isExistEnrolment3) {
+						break;
+					}
+					
+					PrintCourseEnrolments cou = new PrintCourseEnrolments();
+					cou.print();
+					break;
+					
+				case "9":
+					// Check if any enrolment exists
+					boolean isExistEnrolment4 = utilities.checkEmpryEnrolmentList();
+					if(!isExistEnrolment4) {
+						break;
+					}
+					
+					PrintSemesterEnrolments sem = new PrintSemesterEnrolments();
+					sem.print();
+					break;
+
+				
 					
 				case "0":
 					System.out.println("Goodbye!");
