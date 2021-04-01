@@ -13,7 +13,7 @@ public class Utils {
 	HistoryStudentEnrolmentManager manager = HistoryStudentEnrolmentManager.getInstance();
 	CheckExistVisitor checkExistence = new CheckExistVisitor();
 	
-	public boolean checkEmpryEnrolmentList() {
+	public boolean checkEmptyEnrolmentList() {
 		if(manager.getAllEnrolments().size() == 0) {
 			System.out.println("\nEnrolment list is empty!\n");
 			return false;

@@ -34,8 +34,7 @@ public class HistoryStudentEnrolmentManager implements StudentEnrolmentManager, 
 		needUpdatedInfo.setStudent(updatedInfo.getStudent());
 		needUpdatedInfo.setCourse(updatedInfo.getCourse());
 		needUpdatedInfo.setSemester(updatedInfo.getSemester());
-		System.out.println("\nUpdated 1 enrolment:\n" + needUpdatedInfo.toString() + 
-				"\nCurrent information:\n" + updatedInfo.toString());
+		System.out.println("\nUpdated 1 enrolment:\n" + updatedInfo.toString());
 	}
 	
 	@Override

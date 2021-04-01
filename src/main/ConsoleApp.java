@@ -119,7 +119,7 @@ public class ConsoleApp {
 				
 				case "2":
 					// Check if any enrolment exists
-					boolean enrolmentExists = utilities.checkEmpryEnrolmentList();
+					boolean enrolmentExists = utilities.checkEmptyEnrolmentList();
 					if(!enrolmentExists) {
 						break;
 					}
@@ -155,7 +155,7 @@ public class ConsoleApp {
 					
 				case "3":
 					// Check if any enrolment exists
-					Boolean existedEnrolment1 = utilities.checkEmpryEnrolmentList();
+					Boolean existedEnrolment1 = utilities.checkEmptyEnrolmentList();
 					if(!existedEnrolment1) {
 						break;
 					}
@@ -191,7 +191,7 @@ public class ConsoleApp {
 					
 				case "6":
 					// Check if any enrolment exists
-					boolean isExistEnrolment1 = utilities.checkEmpryEnrolmentList();
+					boolean isExistEnrolment1 = utilities.checkEmptyEnrolmentList();
 					if(!isExistEnrolment1) {
 						break;
 					}
@@ -206,35 +206,47 @@ public class ConsoleApp {
 				
 				case "7":
 					// Check if any enrolment exists
-					boolean isExistEnrolment2 = utilities.checkEmpryEnrolmentList();
+					boolean isExistEnrolment2 = utilities.checkEmptyEnrolmentList();
 					if(!isExistEnrolment2) {
 						break;
 					}
 					
 					PrintStudentEnrolments stu = new PrintStudentEnrolments();
 					stu.print();
+					String exportStudent = utilities.getExport();
+					if(exportStudent.equals("y")) {
+						stu.exportCSV();
+					}
 					break;
 					
 				case "8":
 					// Check if any enrolment exists
-					boolean isExistEnrolment3 = utilities.checkEmpryEnrolmentList();
+					boolean isExistEnrolment3 = utilities.checkEmptyEnrolmentList();
 					if(!isExistEnrolment3) {
 						break;
 					}
 					
-					PrintCourseEnrolments cou = new PrintCourseEnrolments();
-					cou.print();
+					PrintCourseEnrolments cs = new PrintCourseEnrolments();
+					cs.print();
+					String exportCourse = utilities.getExport();
+					if(exportCourse.equals("y")) {
+						cs.exportCSV();
+					}
 					break;
-					
+			
 				case "9":
 					// Check if any enrolment exists
-					boolean isExistEnrolment4 = utilities.checkEmpryEnrolmentList();
+					boolean isExistEnrolment4 = utilities.checkEmptyEnrolmentList();
 					if(!isExistEnrolment4) {
 						break;
 					}
 					
 					PrintSemesterEnrolments sem = new PrintSemesterEnrolments();
 					sem.print();
+					String exportSemester = utilities.getExport();
+					if(exportSemester.equals("y")) {
+						sem.exportCSV();
+					}
 					break;
 
 				
