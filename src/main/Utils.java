@@ -36,22 +36,22 @@ public class Utils {
 		System.out.println("\nEnter student ID: ");
 		String sId = getInput();
 		studentList.setToBeCompared(sId);
-		Pair studentResult = studentList.invite(checkExistence);
-		if(!(boolean)studentResult.isExisted) {
+		Pair<Boolean, Integer> studentResult = studentList.invite(checkExistence);
+		if(!(Boolean)studentResult.isExisted) {
 			return null;
 		}
-		int indexStudent = (int)studentResult.index;
+		Integer indexStudent = (Integer)studentResult.index;
 		Student studentToEnrol = studentList.getStudents().get(indexStudent);
 		
 		// Get Course from id
 		System.out.println("\nEnter course ID: ");
 		String cId = getInput();
 		courseList.setToBeCompared(cId);
-		Pair courseResult = courseList.invite(checkExistence);
-		if(!(boolean)courseResult.isExisted) {
+		Pair<Boolean, Integer> courseResult = courseList.invite(checkExistence);
+		if(!(Boolean)courseResult.isExisted) {
 			return null;
 		}
-		int indexCourse = (int)courseResult.index;
+		Integer indexCourse = (Integer)courseResult.index;
 		Course courseToEnrol = courseList.getCourses().get(indexCourse);
 		
 		// Get semester

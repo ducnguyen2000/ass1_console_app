@@ -1,6 +1,6 @@
 package CheckExistence;
 
-public class Pair {
+public class Pair<Boolean, Integer> {
 	public final Boolean isExisted;
 	public final Integer index;
 	

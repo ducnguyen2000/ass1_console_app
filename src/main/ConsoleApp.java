@@ -118,11 +118,12 @@ public class ConsoleApp {
 					break;
 				
 				case "2":
-					StudentEnrolment enrolment = utilities.form(studentList, courseList);
-					if(enrolment == null) {
-						System.out.println("There is no enrolment at the moment!");
+					// Check if any enrolment exists
+					boolean enrolmentExists = utilities.checkEmpryEnrolmentList();
+					if(!enrolmentExists) {
 						break;
 					}
+
 					
 					System.out.println("Update an enrolment:");
 					StudentEnrolment toBeUpdated = utilities.form(studentList, courseList);
@@ -132,7 +133,7 @@ public class ConsoleApp {
 					
 					// Check if needed enrolment exists
 					manager.setToBeCompared(toBeUpdated);
-					Pair resultPair = manager.invite(checkExistence);
+					Pair<Boolean, Integer> resultPair = manager.invite(checkExistence);
 					Boolean existedEnrolment = resultPair.isExisted;
 					Integer indexEnrolment = resultPair.index;
 					
