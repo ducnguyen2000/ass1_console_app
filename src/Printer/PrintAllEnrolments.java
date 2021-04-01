@@ -3,10 +3,10 @@ package Printer;
 import Controller.HistoryStudentEnrolmentManager;
 import Enrolment.StudentEnrolment;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 
 public class PrintAllEnrolments implements CommandPrint {
@@ -30,12 +30,12 @@ public class PrintAllEnrolments implements CommandPrint {
 
 	public void exportCSV() {
 		
-		String fileName = "../Printer/all_enrolment.csv";
+		String fileName = "CSV/all_enrolment.csv";
 		
-		
+		File csvOutputFile = new File(fileName);
 		FileWriter fileWriter = null;
 		
-		try {
+		try(PrintWriter pw = new PrintWriter(csvOutputFile)) {
 			fileWriter = new FileWriter(fileName);
 			
 			// Write the CSV file header
