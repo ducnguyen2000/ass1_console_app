@@ -5,6 +5,13 @@ import Course.*;
 import Controller.*;
 import List.*;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 import CheckExistence.*;
@@ -30,6 +37,7 @@ public class Utils {
 			return null;
 		}
 	}
+	
 	
 	public StudentEnrolment form(StudentList studentList, CourseList courseList) {
 		// Get Student from id
@@ -80,4 +88,8 @@ public class Utils {
 		}
 		return export.toLowerCase();
 	}
+	
+		
+		
+
 }

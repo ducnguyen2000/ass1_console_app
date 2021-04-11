@@ -2,6 +2,7 @@ package Printer;
 
 import Controller.HistoryStudentEnrolmentManager;
 import Enrolment.StudentEnrolment;
+import main.Utils;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -9,13 +10,13 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
+import java.util.Scanner;
 
 
 public class PrintAllEnrolments implements CommandPrint {
 	HistoryStudentEnrolmentManager manager = HistoryStudentEnrolmentManager.getInstance();
 
 	// CSV file header
-	private static final String FILE_HEADER = "studentID, studentName, courseID, courseName, semester";
 	
 	@Override
 	public void print() {	
@@ -28,17 +29,32 @@ public class PrintAllEnrolments implements CommandPrint {
 	@Override
 	public void exportCSV() {
 		Writer out;
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter("all_enrolment.csv"))){
-			bw.write(FILE_HEADER);
-			bw.newLine();
+		Utils utilities = new Utils();
+		System.out.println("\nDo you want to name the file? (y/n)\n");
+		String sc = utilities.getInput();
+		String fileName = "";
+		
+		if(sc.equals("y")) {
+			System.out.println("Your file name: ");
+			fileName = utilities.getInput();
+		} else {		
+			fileName = "all_enrolments";
+			System.out.println("Default name of file: " + fileName);
+		}
+		
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName + ".csv"))){
 			for(StudentEnrolment se: manager.getAllEnrolments()) {
 				bw.write(se.getStudent().getId());
 				bw.write(",");
 				bw.write(se.getStudent().getName());
 				bw.write(",");
+				bw.write(se.getStudent().getBirthdate());
+				bw.write(",");
 				bw.write(se.getCourse().getId());
 				bw.write(",");
 				bw.write(se.getCourse().getName());
+				bw.write(",");
+				bw.write(String.valueOf(se.getCourse().getNumberOfCredits()));
 				bw.write(",");
 				bw.write(se.getSemester());
 				bw.newLine();
