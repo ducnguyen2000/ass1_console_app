@@ -10,6 +10,8 @@ public class StudentEnrolment{
 	private String semester;
 	
 	// Dependency injection with constructor
+	public StudentEnrolment() {};
+	
 	public StudentEnrolment(Student student, Course course, String semester) {
 		this.student = student;
 		this.course = course;
@@ -70,8 +72,8 @@ public class StudentEnrolment{
 	
 	@Override
 	public String toString() {
-		return "Enrolment {Student = [Student ID: " + student.getId() + ", Student name: " + student.getName() + 
-				"]; Course = [Course ID: " + course.getId() + ", Course name: " + course.getName() + 
+		return "Enrolment {Student = [Student ID: " + student.getId() + ", Student name: " + student.getName() + ", Student birthdate: " + student.getBirthdate() +
+				"]; Course = [Course ID: " + course.getId() + ", Course name: " + course.getName() + ", Course credits: " + course.getNumberOfCredits() + 
 				"]; Semester = " + semester + "}";
 	}
 

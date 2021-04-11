@@ -1,5 +1,9 @@
 # Instructions:
 ```
+Load file:
+Choose "y" to load the exists file
+       "n" to load the default file
+
 Press the following number to execute the program:
 ----------------------
 CRUD Student Enrolment

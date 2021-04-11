@@ -16,8 +16,6 @@ public class PrintCourseEnrolments implements CommandPrint {
 	String csId;
 	String csName;
 	
-	// CSV file header
-	private static final String FILE_HEADER = "studentID, studentName, semester";
 
 	
 	@Override
@@ -41,15 +39,15 @@ public class PrintCourseEnrolments implements CommandPrint {
 		Writer out;
 		String fileName = this.csId + "_" + this.csName + ".csv";
 		
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))){
-			bw.write(FILE_HEADER);
-			bw.newLine();			
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))){		
 			for(StudentEnrolment se: manager.getAllEnrolments()) {
 				if(se.getCourseId().equals(this.csId)) {
 					bw.write(se.getStudent().getId());
 					bw.write(",");
 					bw.write(se.getStudent().getName());
-					bw.write(",");				
+					bw.write(",");		
+					bw.write(se.getStudent().getBirthdate());
+					bw.write(",");	
 					bw.write(se.getSemester());
 					bw.newLine();
 				}			

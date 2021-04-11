@@ -1,4 +1,9 @@
 package main;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 import CheckExistence.*;
@@ -11,38 +16,7 @@ import Printer.*;
 
 public class ConsoleApp {
 	public static void main(String args[]) {
-		// Sample students, created by Builder Pattern
-		StudentBuilder stdBuilder1 = new StudentBuilder();
-		StudentBuilder stdBuilder2 = new StudentBuilder();
-		StudentBuilder stdBuilder3 = new StudentBuilder();
-		
-		Student std1 = stdBuilder1.addId("0001").addName("Nguyen Danh Duc").addBirthdate("14/11/2000").buildStudent();
-		Student std2 = stdBuilder2.addId("0002").addName("John Smith").addBirthdate("04/03/1999").buildStudent();
-		Student std3 = stdBuilder3.addId("0003").addName("Snoop Dogg").addBirthdate("20/10/1971").buildStudent();
-		
-		List<Student> students = new ArrayList<>();
-		students.addAll(Arrays.asList(std1, std2, std3));
-		
-		StudentList studentList = new StudentList();
-		studentList.setStudents(students);
-		
-		
-		// Sample courses, created by Builder Pattern
-		CourseBuilder crsBuilder1 = new CourseBuilder();
-		CourseBuilder crsBuilder2 = new CourseBuilder();
-		CourseBuilder crsBuilder3 = new CourseBuilder();
-			
-		
-		Course crs1 = crsBuilder1.addId("0001").addName("SADI").addNumberOfCredits(12).buildCourse();
-		Course crs2 = crsBuilder2.addId("0002").addName("SEPM").addNumberOfCredits(12).buildCourse();
-		Course crs3 = crsBuilder3.addId("0003").addName("P1").addNumberOfCredits(12).buildCourse();
-		
-		List<Course> courses = new ArrayList<>();
-		courses.addAll(Arrays.asList(crs1, crs2, crs3));
-		
-		CourseList courseList = new CourseList();
-		courseList.setCourses(courses);
-		
+
 		
 		// Visitor Pattern
 		CheckExistVisitor checkExistence = new CheckExistVisitor();
@@ -51,13 +25,82 @@ public class ConsoleApp {
 		HistoryStudentEnrolmentManager manager = HistoryStudentEnrolmentManager.getInstance();
 
 		
-		
-		
 		boolean isQuit = false;
 		
 		// Menu
 		System.out.println("\nWelcome to the enrolment system!\n");
 		Utils utilities = new Utils();
+		
+		System.out.println("\nDo you want to load any file? (y/n)\n");
+		
+		String ans = utilities.getInput();
+		String fileName = "";
+	
+		
+		StudentList studentList = new StudentList();
+		List<Student> students = new ArrayList<>();
+		
+		CourseList courseList = new CourseList();
+		List<Course> courses = new ArrayList<>();
+		
+		
+		try {		
+			FileReader fr = null;
+
+			if(ans.equals("y")) {
+				System.out.println("\nEnter your file name: (Do not enter the .csv)\n");	
+				
+				String file = utilities.getInput();
+				fileName = file + ".csv";
+				File f = new File(fileName);
+				if(f.isFile() && !f.isDirectory()) {
+					fr = new FileReader(fileName);
+				} else {
+					System.out.println("File does not exists");
+					System.out.println("Using default.csv instead");
+					fileName = "default.csv";
+					fr = new FileReader(fileName);
+				}
+											
+			} else {
+				System.out.println("\nLoad default csv file\n");
+				fileName = "default.csv";
+				fr = new FileReader(fileName);
+			}
+			
+			BufferedReader br = new BufferedReader(fr);
+			
+			String line = "";
+
+			while((line = br.readLine()) != null) {
+				List<String> tempArr = new ArrayList<String>(Arrays.asList(line.split(",")));
+				
+				StudentBuilder stdBuilder = new StudentBuilder();
+				Student std = stdBuilder.addId(tempArr.get(0)).addName(tempArr.get(1)).addBirthdate(tempArr.get(2)).buildStudent();
+				students.addAll(Arrays.asList(std));
+				studentList.setStudents(students);
+				
+				CourseBuilder crsBuilder = new CourseBuilder();
+				Course crs = crsBuilder.addId(tempArr.get(3)).addName(tempArr.get(4)).addNumberOfCredits(Integer.parseInt(tempArr.get(5))).buildCourse();
+				courses.addAll(Arrays.asList(crs));
+				courseList.setCourses(courses);
+				
+				
+				
+				StudentEnrolment se = new StudentEnrolment(std, crs, tempArr.get(6));
+				manager.createStudentEnrolment(se);
+				
+			}
+			br.close();
+			System.out.println("Load file sucessful");
+		} catch(IOException ioe) {
+			ioe.printStackTrace();
+		}
+		
+		System.out.println(studentList);
+		System.out.println(courseList);
+
+		
 		while(!isQuit) {
 			System.out.println(
 					"Press the following number to execute the program:\n" +
