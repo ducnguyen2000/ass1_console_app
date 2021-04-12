@@ -77,28 +77,65 @@ public class ConsoleApp {
 				
 				StudentBuilder stdBuilder = new StudentBuilder();
 				Student std = stdBuilder.addId(tempArr.get(0)).addName(tempArr.get(1)).addBirthdate(tempArr.get(2)).buildStudent();
-				students.addAll(Arrays.asList(std));
-				studentList.setStudents(students);
+				
+				// Check Student existence
+				studentList.setToBeCompared(tempArr.get(0));
+				Pair<Boolean, Integer> studentResult = studentList.invite(checkExistence);
+				
+				if(studentResult.isExisted) {
+					System.out.println("\nThis Student has already existed");
+				} else {
+					students.addAll(Arrays.asList(std));
+					studentList.setStudents(students);
+				}
+				
+				
 				
 				CourseBuilder crsBuilder = new CourseBuilder();
 				Course crs = crsBuilder.addId(tempArr.get(3)).addName(tempArr.get(4)).addNumberOfCredits(Integer.parseInt(tempArr.get(5))).buildCourse();
+				
+				// Check Course existence
+				courseList.setToBeCompared(tempArr.get(3));
+				Pair<Boolean, Integer> courseResult = courseList.invite(checkExistence);
+				
+				if(courseResult.isExisted) {
+					System.out.println("\nThis Course has already existed");
+				} else {
+					courses.addAll(Arrays.asList(crs));
+					courseList.setCourses(courses);
+				}
+				
 				courses.addAll(Arrays.asList(crs));
 				courseList.setCourses(courses);
 				
 				
 				
-				StudentEnrolment se = new StudentEnrolment(std, crs, tempArr.get(6));
-				manager.createStudentEnrolment(se);
+				
+				StudentEnrolment se = utilities.insertFromFile(std, crs, tempArr.get(6));
+				
+				// Check Student Enrolment existence
+				manager.setToBeCompared(se);
+				boolean existEnrolment = (Boolean) manager.invite(checkExistence).isExisted;
+				
+				if(existEnrolment) {
+					System.out.println("\nThis enrolment has already existed!");
+					continue;
+				}
+				
+				// Command Pattern
+				CreateEnrolmentCommand addInfo = new CreateEnrolmentCommand(se);
+				addInfo.execute();
+				
 				
 			}
 			br.close();
-			System.out.println("Load file sucessful");
+			System.out.println("Load file sucessful!");
 		} catch(IOException ioe) {
 			ioe.printStackTrace();
+			System.out.println("Load file error!");
 		}
 		
-		System.out.println(studentList);
-		System.out.println(courseList);
+
 
 		
 		while(!isQuit) {
@@ -139,10 +176,9 @@ public class ConsoleApp {
 					}
 					
 					
-					// Check Existence
-					
+					// Check Existence			
 					manager.setToBeCompared(newEnrolment);
-					Boolean existEnrolment = ((Boolean)manager.invite(checkExistence).isExisted);
+					boolean existEnrolment = ((Boolean) manager.invite(checkExistence).isExisted);
 					
 					if(existEnrolment) {
 						System.out.println("\nThis enrolment has already existed!");
@@ -167,6 +203,7 @@ public class ConsoleApp {
 						break;
 					}
 
+				
 					
 					System.out.println("Update an enrolment:");
 					StudentEnrolment toBeUpdated = utilities.form(studentList, courseList);
@@ -177,7 +214,7 @@ public class ConsoleApp {
 					// Check if needed enrolment exists
 					manager.setToBeCompared(toBeUpdated);
 					Pair<Boolean, Integer> resultPair = manager.invite(checkExistence);
-					Boolean existedEnrolment = resultPair.isExisted;
+					boolean existedEnrolment = resultPair.isExisted;
 					Integer indexEnrolment = resultPair.index;
 					
 					if((!existedEnrolment) && (indexEnrolment == null)) {
@@ -198,7 +235,7 @@ public class ConsoleApp {
 					
 				case "3":
 					// Check if any enrolment exists
-					Boolean existedEnrolment1 = utilities.checkEmptyEnrolmentList();
+					boolean existedEnrolment1 = utilities.checkEmptyEnrolmentList();
 					if(!existedEnrolment1) {
 						break;
 					}
@@ -209,7 +246,7 @@ public class ConsoleApp {
 						break;
 					}
 					manager.setToBeCompared(toBeDeleted);
-					Boolean exist = ((Boolean)manager.invite(checkExistence).isExisted);
+					boolean exist = (Boolean) manager.invite(checkExistence).isExisted;
 					if(!exist) {
 						System.out.println("\nNo such a data was found!");
 						break;

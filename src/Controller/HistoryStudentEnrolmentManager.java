@@ -50,7 +50,7 @@ public class HistoryStudentEnrolmentManager implements StudentEnrolmentManager, 
 	
 	// Override Visitable
 	@Override
-	public Pair invite(Visitor visitor) {
+	public Pair<Boolean, Integer> invite(Visitor visitor) {
 		return visitor.visit(this.studentEnrolmentList, toBeCompared);
 	}
 }

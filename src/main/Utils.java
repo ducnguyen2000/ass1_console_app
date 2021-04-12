@@ -38,29 +38,42 @@ public class Utils {
 		}
 	}
 	
+	public StudentEnrolment insertFromFile(Student student, Course course, String semester) {
+		
+		// Dependency Injection: create enrolment
+		StudentEnrolment newEnrolment = new StudentEnrolment(student, course, semester);
+		return newEnrolment;
+	}
 	
 	public StudentEnrolment form(StudentList studentList, CourseList courseList) {
+		System.out.println("All available enrolments");
+		for(StudentEnrolment se: manager.getAllEnrolments()) {
+			System.out.println(se.toString());
+		}		
+		
 		// Get Student from id
 		System.out.println("\nEnter student ID: ");
 		String sId = getInput();
 		studentList.setToBeCompared(sId);
-		Pair<Boolean, Integer> studentResult = studentList.invite(checkExistence);
+		Pair studentResult = studentList.invite(checkExistence);
 		if(!(Boolean)studentResult.isExisted) {
 			return null;
 		}
-		Integer indexStudent = (Integer)studentResult.index;
+		int indexStudent = (Integer)studentResult.index;
 		Student studentToEnrol = studentList.getStudents().get(indexStudent);
+		System.out.println(studentToEnrol);
 		
 		// Get Course from id
 		System.out.println("\nEnter course ID: ");
 		String cId = getInput();
 		courseList.setToBeCompared(cId);
-		Pair<Boolean, Integer> courseResult = courseList.invite(checkExistence);
+		Pair courseResult = courseList.invite(checkExistence);
 		if(!(Boolean)courseResult.isExisted) {
 			return null;
 		}
-		Integer indexCourse = (Integer)courseResult.index;
+		int indexCourse = (Integer) courseResult.index;
 		Course courseToEnrol = courseList.getCourses().get(indexCourse);
+		System.out.println(courseToEnrol);
 		
 		// Get semester
 		System.out.println("\nEnter semester(Format: YYYYA/YYYYB/YYYYC): ");
