@@ -1,6 +1,6 @@
 package CheckExistence;
 
-@SuppressWarnings("hiding")
+
 public class Pair<Boolean, Integer> {
 	public final Boolean isExisted;
 	public final Integer index;

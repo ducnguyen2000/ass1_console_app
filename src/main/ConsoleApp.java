@@ -42,8 +42,7 @@ public class ConsoleApp {
 		
 		CourseList courseList = new CourseList();
 		List<Course> courses = new ArrayList<>();
-		
-		
+			
 		try {		
 			FileReader fr = null;
 
@@ -76,7 +75,7 @@ public class ConsoleApp {
 				List<String> tempArr = new ArrayList<String>(Arrays.asList(line.split(",")));
 				
 				StudentBuilder stdBuilder = new StudentBuilder();
-				Student std = stdBuilder.addId(tempArr.get(0)).addName(tempArr.get(1)).addBirthdate(tempArr.get(2)).buildStudent();
+				Student std = stdBuilder.addId(String.valueOf(tempArr.get(0))).addName(tempArr.get(1)).addBirthdate(tempArr.get(2)).buildStudent();
 				
 				// Check Student existence
 				studentList.setToBeCompared(tempArr.get(0));
@@ -92,7 +91,7 @@ public class ConsoleApp {
 				
 				
 				CourseBuilder crsBuilder = new CourseBuilder();
-				Course crs = crsBuilder.addId(tempArr.get(3)).addName(tempArr.get(4)).addNumberOfCredits(Integer.parseInt(tempArr.get(5))).buildCourse();
+				Course crs = crsBuilder.addId(String.valueOf(tempArr.get(3))).addName(tempArr.get(4)).addNumberOfCredits(Integer.parseInt(tempArr.get(5))).buildCourse();
 				
 				// Check Course existence
 				courseList.setToBeCompared(tempArr.get(3));
@@ -105,13 +104,7 @@ public class ConsoleApp {
 					courseList.setCourses(courses);
 				}
 				
-				courses.addAll(Arrays.asList(crs));
-				courseList.setCourses(courses);
-				
-				
-				
-				
-				StudentEnrolment se = utilities.insertFromFile(std, crs, tempArr.get(6));
+				StudentEnrolment se = utilities.insertFromFile(std, crs, String.valueOf(tempArr.get(6)));
 				
 				// Check Student Enrolment existence
 				manager.setToBeCompared(se);
@@ -120,11 +113,13 @@ public class ConsoleApp {
 				if(existEnrolment) {
 					System.out.println("\nThis enrolment has already existed!");
 					continue;
-				}
+				}		
 				
 				// Command Pattern
 				CreateEnrolmentCommand addInfo = new CreateEnrolmentCommand(se);
 				addInfo.execute();
+				
+				
 				
 				
 			}
@@ -171,9 +166,11 @@ public class ConsoleApp {
 				case "1":
 					System.out.println("Create new enrolment:");
 					StudentEnrolment newEnrolment = utilities.form(studentList, courseList);
+
 					if(newEnrolment == null) {
 						break;
 					}
+					
 					
 					
 					// Check Existence			
@@ -339,9 +336,7 @@ public class ConsoleApp {
 				default:
 					System.out.println("\nInvalid input\n");
 					break;
-					
-								
-					
+		
 			}
 			
 		}
