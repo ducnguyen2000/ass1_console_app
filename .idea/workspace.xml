@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="db9c862c-257e-42cb-9df4-1eef63692b49" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Testing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/CheckExistence/CheckExistVisitor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/CheckExistence/Pair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/CheckExistence/Visitable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/CheckExistence/Visitor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Controller/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Controller/CreateEnrolmentCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Controller/DeleteEnrolmentCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Controller/HistoryStudentEnrolmentManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Controller/UpdateEnrolmentCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Course/Course.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Course/CourseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Enrolment/StudentEnrolment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Enrolment/StudentEnrolmentManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/List/CourseList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/List/MyIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/List/StudentList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Printer/CommandPrint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Printer/PrintAllEnrolments.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Printer/PrintCourseEnrolments.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Printer/PrintSemesterEnrolments.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Printer/PrintStudentEnrolments.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Student/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Student/StudentBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/ConsoleApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/Utils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CheckExistence/CheckExistVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckExistence/CheckExistVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CheckExistence/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckExistence/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CheckExistence/Visitable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckExistence/Visitable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CheckExistence/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckExistence/Visitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CreateEnrolmentCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/CreateEnrolmentCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DeleteEnrolmentCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/DeleteEnrolmentCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HistoryStudentEnrolmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/HistoryStudentEnrolmentManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UpdateEnrolmentCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/UpdateEnrolmentCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Course/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Course/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Course/CourseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Course/CourseBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enrolment/StudentEnrolment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Enrolment/StudentEnrolment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enrolment/StudentEnrolmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Enrolment/StudentEnrolmentManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/List/CourseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/List/CourseList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/List/MyIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/List/MyIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/List/StudentList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/List/StudentList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Printer/CommandPrint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Printer/CommandPrint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Printer/PrintAllEnrolments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Printer/PrintAllEnrolments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Printer/PrintCourseEnrolments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Printer/PrintCourseEnrolments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Printer/PrintSemesterEnrolments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Printer/PrintSemesterEnrolments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Printer/PrintStudentEnrolments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Printer/PrintStudentEnrolments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Student/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student/StudentBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Student/StudentBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ConsoleApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Utils.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EndpointsView">
+    <option name="showFromLibraries" value="true" />
+    <option name="showFromOpenedProjects" value="true" />
+    <option name="showProjectsPanel" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1r4w2Az0fxrLCVvzeCJEn65qRoc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+  </component>
+  <component name="RunManager" selected="JUnit.Testing">
+    <configuration name="ConsoleApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainApp.ConsoleApp" />
+      <module name="Console App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MainApp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Testing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Console App" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Testing" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Testing.TestEnrolmentStudentNameUpdateNew" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Console App" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Testing" />
+      <option name="METHOD_NAME" value="TestEnrolmentStudentNameUpdateNew" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Testing" />
+        <item itemvalue="JUnit.Testing.TestEnrolmentStudentNameUpdateNew" />
+        <item itemvalue="Application.ConsoleApp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db9c862c-257e-42cb-9df4-1eef63692b49" name="Default Changelist" comment="" />
+      <created>1618248459632</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618248459632</updated>
+      <workItem from="1618248475426" duration="430000" />
+      <workItem from="1618248948697" duration="785000" />
+      <workItem from="1618250169820" duration="1845000" />
+      <workItem from="1618252135852" duration="673000" />
+      <workItem from="1618252840928" duration="15000" />
+      <workItem from="1618253029754" duration="132000" />
+      <workItem from="1618253914926" duration="300000" />
+      <workItem from="1618254226205" duration="638000" />
+      <workItem from="1618255059387" duration="3391000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="440" y="94" key="#Project_Structure" timestamp="1618251860925">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2360" y="94" key="#Project_Structure/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1618249737457" />
+    <state x="440" y="94" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1618251860925" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618254030434">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2334" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1618249671402" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1618254030434" />
+    <state x="590" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1618252180417">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2510" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1618249492541" />
+    <state x="590" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1618252180417" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1618254214193">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1618249207101" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1618254214193" />
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1618258447047">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618258447047" />
+    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1618258447047">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618258447047" />
+    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1618258447047">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618258447047" />
+    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1618258447047">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618258447047" />
+    <state width="1877" height="338" key="GridCell.Tab.1.bottom" timestamp="1618257443848">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618257443848" />
+    <state width="1877" height="338" key="GridCell.Tab.1.center" timestamp="1618257443848">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618257443848" />
+    <state width="1877" height="338" key="GridCell.Tab.1.left" timestamp="1618257443848">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618257443848" />
+    <state width="1877" height="338" key="GridCell.Tab.1.right" timestamp="1618257443848">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618257443848" />
+    <state x="490" y="175" key="Maven.ArtifactSearchDialog" timestamp="1618255611074">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="490" y="175" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1618255611074" />
+    <state x="755" y="82" key="SettingsEditor" timestamp="1618255203128">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2360" y="94" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1618248775361" />
+    <state x="755" y="82" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1618255203128" />
+    <state x="2536" y="240" key="run.anything.popup" timestamp="1618248761794">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2536" y="240" key="run.anything.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1618248761794" />
+  </component>
+</project>
